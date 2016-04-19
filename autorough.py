@@ -83,7 +83,86 @@ import av
 fordur = av.open(audiofile)
 print 'Duration is',fordur.duration/1000000.0,'seconds'
 
+# Now, open Premiere Pro CS6 and load your media into your project. Add one movie file to the sequence, unlink and remove the audio. then save and export the xml.
 
+xmlfile = 'first.xml'
+
+from lxml import etree
+
+parser = etree.XMLParser(ns_clean=True,remove_blank_text=True)
+xml = etree.parse(xmlfile,parser)
+
+
+
+# First, let's get the clip ids and put them in a dictionary
+
+masterdic = {}
+clips = xml.findall('.//project/children/clip')
+for clip in clips:
+    masterdic[clip.find("name").text] = (clip.get("id"),clip.find("media/video/track/clipitem/file").get('id'))
+
+
+from lxml.builder import E
+
+
+
+# Let's delete our placeholder
+clip = xml.find('.//project/children/sequence/media/video/track/clipitem')
+clip.getparent().remove(clip)
+
+
+
+
+import av
+import random
+
+def IN(v):
+    # helper function, 'in' is a reserved word
+    return {'in': v}
+
+count = 0
+
+for i,clip in enumerate(masterdic.keys()):
+    print vidfolder+clip
+    vid = av.open(vidfolder+clip)
+    print vidfolder+clip
+    dur = int(vid.duration/1000000.0*23.976)
+    if dur<4*23.976:
+        maxo = int(dur/23.976)
+    else:
+        maxo=4
+    #random duration
+    beatran = random.randint(1,maxo) # in beats
+    beatrans = beatran / beat
+    beatranf = int(beatrans*23.976) # in frames
+    
+    #random start point
+    startran = random.randint(0,dur-beatranf)
+    
+    ### add csv logic
+    
+    
+    track = xml.find('.//project/children/sequence/media/video/track/')
+    item =  E.clipitem(
+        E.masterclip(masterdic[clip][0]),
+        E.name(clip),
+        E.enabled("TRUE"),
+        E.duration(str(beatranf)),
+        E.start(str(count)),
+        E.end(str(count+beatranf)),
+        E.inyougo(str(startran)),
+        E.out(str(startran+beatranf)),
+        E.alphatype("black"),
+        E.file(id=masterdic[clip][1]),
+    )
+    item.attrib['id'] = 'clipitem-'+str(i)
+    item.attrib['frameBlend']="FALSE"
+    track.append(item)
+    count = count + beatranf
+
+print masterdic
+
+xml.write('tester.xml', pretty_print=True,xml_declaration=True,encoding="UTF-8")
 
 
 
