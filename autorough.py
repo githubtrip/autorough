@@ -45,6 +45,7 @@ if audiofile != None:
 	        # default:
 	        samplerate, win_s, hop_s = 44100, 1024, 512
 
+	    print path,samplerate,hop_s
 	    s = source(path, samplerate, hop_s)
 	    samplerate = s.samplerate
 	    o = tempo("specdiff", win_s, hop_s, samplerate)

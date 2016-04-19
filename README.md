@@ -7,12 +7,17 @@ Auto Rough
 
 ![A picture of an actual Golden Rough](http://theklutzycook.com/wp-content/uploads/2012/09/Golden-Rough.jpg)
 
+Before we begin
+----
+
+This is under heavy testing and development. I'll post something more authoritative like a version number here when it's ready to be let loose in the wild.
+
 What you need
 ----
 
 This is all you need:
 *	Premiere Pro CS6 (it's great, I don't have to pay a subscription for it!),
-*	[This Docker image](https://hub.docker.com/r/jacksongs/autorough/),
+*	[This 900mb Docker image](https://hub.docker.com/r/jacksongs/autorough/),
 *	Some videos, and
 *	A thumping track in mp3 format.
 
@@ -20,9 +25,11 @@ If you don't use the Docker image, you will need to install into a linux/Mac env
 *	ffmpeg,
 *	aubio,
 *	lxml,
-*	python and the PyAV module.
+*	python and the PyAV package.
 
-It's a total pain to compile all that crap though. Docker is your overhyped, unpredictable, unpolished but extremely useful friend.
+It's a total pain to compile all that though. Docker is your overhyped, unpredictable, unpolished but extremely useful friend.
+
+You could probably get away with a lighter weight set of tools but this gets the job done. 
 
 How to get it working
 ---
