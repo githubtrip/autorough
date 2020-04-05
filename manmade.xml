@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xmeml>
+<xmeml version="4">
+	<sequence>
+		<duration>1285</duration>
+		<rate>
+			<timebase>50</timebase>
+			<ntsc>FALSE</ntsc>
+		</rate>
+		<name>P1037604a</name>
+		<media>
+			<video>
+				<format>
+					<samplecharacteristics>
+						<rate>
+							<timebase>50</timebase>
+							<ntsc>FALSE</ntsc>
+						</rate>
+						<codec>
+							<name>Apple ProRes 422</name>
+							<appspecificdata>
+								<appname>Final Cut Pro</appname>
+								<appmanufacturer>Apple Inc.</appmanufacturer>
+								<appversion>7.0</appversion>
+								<data>
+									<qtcodec>
+										<codecname>Apple ProRes 422</codecname>
+										<codectypename>Apple ProRes 422</codectypename>
+										<codectypecode>apcn</codectypecode>
+										<codecvendorcode>appl</codecvendorcode>
+										<spatialquality>1024</spatialquality>
+										<temporalquality>0</temporalquality>
+										<keyframerate>0</keyframerate>
+										<datarate>0</datarate>
+									</qtcodec>
+								</data>
+							</appspecificdata>
+						</codec>
+						<width>1920</width>
+						<height>1080</height>
+						<anamorphic>FALSE</anamorphic>
+						<pixelaspectratio>square</pixelaspectratio>
+						<fielddominance>none</fielddominance>
+						<colordepth>24</colordepth>
+					</samplecharacteristics>
+				</format>
+				<track>
+					<clipitem>
+						<name>NRL20200102-Raiders v Titans.mp4</name>
+						<duration>553031</duration>
+						<rate>
+							<timebase>50</timebase>
+							<ntsc>FALSE</ntsc>
+						</rate>
+						<start>1000</start>
+						<end>1711</end>
+						<in>254648</in>
+						<out>255360</out>
+						<file id="file-1">
+							<name>NRL20200102-Raiders v Titans.mp4</name>
+							<pathurl>file://localhost/Volumes/NRL-Kayo-1/NRL20200102-Raiders%20v%20Titans.mp4</pathurl>
+							<rate>
+								<timebase>50</timebase>
+								<ntsc>FALSE</ntsc>
+							</rate>
+							<duration>549830</duration>
+							<timecode>
+								<rate>
+									<timebase>50</timebase>
+									<ntsc>FALSE</ntsc>
+								</rate>
+								<string>00:00:00:00</string>
+								<frame>0</frame>
+								<displayformat>NDF</displayformat>
+							</timecode>
+							<media>
+								<video>
+									<samplecharacteristics>
+										<rate>
+											<timebase>50</timebase>
+											<ntsc>FALSE</ntsc>
+										</rate>
+										<width>1920</width>
+										<height>1080</height>
+										<anamorphic>FALSE</anamorphic>
+										<pixelaspectratio>square</pixelaspectratio>
+										<fielddominance>none</fielddominance>
+									</samplecharacteristics>
+								</video>
+							</media>
+						</file>
+					</clipitem>
+				</track>
+			</video>
+		</media>
+		<timecode>
+			<rate>
+				<timebase>50</timebase>
+				<ntsc>FALSE</ntsc>
+			</rate>
+			<string>00:00:00:00</string>
+		</timecode>
+	</sequence>
+</xmeml>
